@@ -14,16 +14,17 @@ param userPrincipalId string = deployer().objectId
 })
 param location string = resourceGroup().location
 
-var cosmosDbName = '${uniqueString(resourceGroup().id)}-cosmosdb'
+var uid = 'a${uniqueString(resourceGroup().id)}'
+var cosmosDbName = '${uid}-cosmosdb'
 var cosmosDbDatabaseName = 'zava'
-var storageAccountName = '${uniqueString(resourceGroup().id)}sa'
-var aiFoundryName = 'aif-${uniqueString(resourceGroup().id)}'
-var aiProjectName = 'proj-${uniqueString(resourceGroup().id)}'
-var containerAppName = '${uniqueString(resourceGroup().id)}-app'
-var containerAppEnvName = '${uniqueString(resourceGroup().id)}-cosu-cae'
-var logAnalyticsName = '${uniqueString(resourceGroup().id)}-cosu-la'
-var appInsightsName = '${uniqueString(resourceGroup().id)}-cosu-ai'
-var registryName = '${uniqueString(resourceGroup().id)}cosureg'
+var storageAccountName = '${uid}sa'
+var aiFoundryName = 'aif-${uid}'
+var aiProjectName = 'proj-${uid}'
+var containerAppName = '${uid}-app'
+var containerAppEnvName = '${uid}-cosu-cae'
+var logAnalyticsName = '${uid}-cosu-la'
+var appInsightsName = '${uid}-cosu-ai'
+var registryName = '${uid}cosureg'
 var registrySku = 'Standard'
 
 var tags = {
